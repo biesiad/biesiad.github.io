@@ -7,11 +7,11 @@ categories: arduino dccduino serial port CH34OG
 ---
 
 
-Recently I bought a few cheap Arduino clones from Amazon. They are supposed to be compatible with Arduino platform and virtualy be able to replace corresponding Arduino board. I connected it to with computer via USB cable and opened Arduino IDE. Unfortunately no additional serial port showed up in my IDE. Turns out DCCduino devices use different USB/Serial port converter.
+Recently I bought a few cheap Arduino clones from Amazon. They are supposed to be compatible with Arduino platform and virtualy be able to replace corresponding Arduino boards. I connected it to with computer via USB cable and opened Arduino IDE. Unfortunately no additional serial port showed up in my IDE. Turns out DCCduino devices use different USB/Serial port converter.
 
 ![Avaliable serial ports](/images/dccduino-nano-under.jpg)
 
-Instead of FTDI chip I found a CH34OG on on the bottom of my Arduino clone. Google search took me instantly a stack exchange [thread](http://arduino.stackexchange.com/questions/3700/rename-device-name-ch340-usb-to-serial-mac-os). I found there a link to the driver and some help on how to install it.
+Instead of FTDI chip I found a CH34OG on on the bottom of my Arduino clone. Google search took me to a stack exchange [thread](http://arduino.stackexchange.com/questions/3700/rename-device-name-ch340-usb-to-serial-mac-os). There I found a link to the driver and some help on how to install it.
 
 Driver page: [http://www.wch.cn/download/CH341SER_MAC_ZIP.html](http://www.wch.cn/download/CH341SER_MAC_ZIP.html)
 

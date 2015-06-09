@@ -12,4 +12,4 @@ gbiesiadecki (at) gmail . com
 
 [deelay.me](http://www.deelay.me/)
 
-[LaundryQueue](laundryqueue.heroku.com)
+[LaundryQueue](http://laundryqueue.heroku.com)

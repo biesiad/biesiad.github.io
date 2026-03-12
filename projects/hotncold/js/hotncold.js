@@ -93,14 +93,26 @@ views.share = {
                 btn.text('Copied!');
                 setTimeout(function () { btn.text('Copy link'); }, 2000);
             };
-            if (navigator.share) {
-                navigator.share({ url: gameUrl }).then(onSuccess).catch(function () {});
-            } else if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(gameUrl).then(onSuccess).catch(function () {
+            var copyViaExecCommand = function () {
+                var textarea = document.createElement('textarea');
+                textarea.value = gameUrl;
+                textarea.style.position = 'fixed';
+                textarea.style.opacity = '0';
+                document.body.appendChild(textarea);
+                textarea.focus();
+                textarea.select();
+                try {
+                    document.execCommand('copy');
+                    onSuccess();
+                } catch (e) {
                     prompt('Copy this link:', gameUrl);
-                });
+                }
+                document.body.removeChild(textarea);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(gameUrl).then(onSuccess).catch(copyViaExecCommand);
             } else {
-                prompt('Copy this link:', gameUrl);
+                copyViaExecCommand();
             }
         });
     }

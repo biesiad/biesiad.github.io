@@ -88,10 +88,18 @@ views.share = {
         this.playLink.attr('href', this.gameUrl);
         var gameUrl = this.gameUrl;
         $('#copy_link').on('click', function () {
-            navigator.clipboard.writeText(gameUrl).then(function () {
-                $('#copy_link').text('Copied!');
-                setTimeout(function () { $('#copy_link').text('Copy link'); }, 2000);
-            });
+            if (navigator.share) {
+                navigator.share({ url: gameUrl });
+            } else if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(gameUrl).then(function () {
+                    $('#copy_link').text('Copied!');
+                    setTimeout(function () { $('#copy_link').text('Copy link'); }, 2000);
+                }).catch(function () {
+                    prompt('Copy this link:', gameUrl);
+                });
+            } else {
+                prompt('Copy this link:', gameUrl);
+            }
         });
     }
 };

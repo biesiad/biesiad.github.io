@@ -1,0 +1,42 @@
+<head>
+  <title>Hot'n'Cold Game</title>
+  <meta name="viewport" content="initial-scale=1.0,user-scalable=no,width=device-width" />
+  <link rel="apple-touch-icon" href="images/favicon-touch.png" />
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="css/clearfix.css" type="text/css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" charset="utf-8">
+  <link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Francois+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Facebook -->
+  <meta property="og:title" content="Hot'n'Cold game"/>
+  <meta property="og:type" content="game"/>
+  <meta property="og:url" content="http://biesiad.github.com/hotncold"/>
+  <meta property="og:site_name" content="Hot n'Cold - playing with geolocation"/>
+  <meta property="og:image" content="http://playhotncold.com/images/iphone.png"/>
+  <meta property="og:description" content="With this tiny application, you can play Hot n'Cold game using your mobile browser. You need mobile phone with modern web browser and GPS module, and some uncovered area where you could play."/>
+</head>
+<body>
+  <div class="top">
+    <nav class="menu container">
+      <ul>
+        <li><a href="#home">home</a></li>
+        <li><a href="#faq" id="faq">faq</a></li>
+        <li><a href="https://github.com/biesiad/hotncold">github</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container">
+    <div class="logo box">
+        <img src="images/logo.gif">
+        <h1>Hot n'Cold</h1>
+    </div>
+    <div id="app"></div>
+  </div>
+
+  <script src="js/lib/jquery.min.js"></script>
+  <script src="js/hotncold.js"></script>
+</body>
+</html>

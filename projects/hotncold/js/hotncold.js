@@ -86,6 +86,13 @@ views.share = {
         this.playLink = $('#play_link');
         this.playLink.html(this.gameUrl);
         this.playLink.attr('href', this.gameUrl);
+        var gameUrl = this.gameUrl;
+        $('#copy_link').on('click', function () {
+            navigator.clipboard.writeText(gameUrl).then(function () {
+                $('#copy_link').text('Copied!');
+                setTimeout(function () { $('#copy_link').text('Copy link'); }, 2000);
+            });
+        });
     }
 };
 
@@ -148,7 +155,7 @@ views.play = {
             this.direction.text('Hot').removeClass().addClass('hot');
         }
         this.toTarget.html('<p>' + ~~(data.toTarget * 1000) + 'm to target</p>');
-        this.accuracy.html('accuracy: ' + data.accuracy + 'm');
+        this.accuracy.html('accuracy: ' + parseFloat(data.accuracy.toPrecision(2)) + 'm');
     },
     checkIsMoving: function () {
         // if this.onPosition not called for 10 seconds
